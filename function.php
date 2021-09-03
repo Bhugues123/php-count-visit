@@ -2,13 +2,13 @@
 
 function compteur($page){
 
-	include('bdd.php');
+    include('bdd.php');
 
-	$url = $page;
-	$ip = $_SERVER['REMOTE_ADDR'];
-	$date = date('d-m-Y');
+    $url = $page;
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $date = date('d-m-Y');
 
-	$m = $bdd->query('SELECT * FROM Compteur WHERE Page="'.$url.'" AND DateJour="'.$date.'"');
+    $m = $bdd->query('SELECT * FROM Compteur WHERE Page="'.$url.'" AND DateJour="'.$date.'"');
     if($mr = $m->fetch()){
 
     	if($mr['LasteIp'] == $ip){
