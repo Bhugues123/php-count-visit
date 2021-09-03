@@ -25,17 +25,17 @@ function compteur($page){
     }else{
 
     	$stmtt = $bdd->prepare("INSERT INTO Compteur (Page, DateJour, Nombre, LasteIp) VALUES ( :Page, :DateJour, :Nombre, :LasteIp)");
-		  $stmtt->bindParam(':Page', $PageS);
-		  $stmtt->bindParam(':DateJour', $DateJourS);
-		  $stmtt->bindParam(':Nombre', $NombreS);
-		  $stmtt->bindParam(':LasteIp', $LasteIpS);
+	$stmtt->bindParam(':Page', $PageS);
+	$stmtt->bindParam(':DateJour', $DateJourS);
+	$stmtt->bindParam(':Nombre', $NombreS);
+	$stmtt->bindParam(':LasteIp', $LasteIpS);
 
-		  $PageS = $url;
-		  $DateJourS = $date;
-		  $NombreS = '1';
-		  $LasteIpS = $ip;
+	$PageS = $url;
+	$DateJourS = $date;
+	$NombreS = '1';
+	$LasteIpS = $ip;
 						
-		  $stmtt->execute();
+	$stmtt->execute();
 
     }
 
